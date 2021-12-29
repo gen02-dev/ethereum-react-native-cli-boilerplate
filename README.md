@@ -4,6 +4,11 @@
 ```sh
 cd ethereum-react-native-cli-boilerplate
 yarn install
+
+cd ios
+pod install
+
+cd ..
 ```
 
 🚴‍♂️ Run your App:
