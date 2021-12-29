@@ -7,8 +7,8 @@ import WalletConnectProvider, {
   WalletConnectProviderProps,
 } from "./WalletConnect";
 import { Platform } from "react-native";
-import Qrcode from "./Qrcode";
-import { expo } from "../app.json";
+//import Qrcode from "./Qrcode";
+//import { expo } from "../app.json";
 import { MoralisDappProvider } from "./providers/MoralisDappProvider/MoralisDappProvider";
 import { ApplicationProvider, Layout, Text } from "@ui-kitten/components";
 import * as eva from "@eva-design/eva";
@@ -20,8 +20,6 @@ import {
 interface ProvidersProps {
   readonly children: JSX.Element;
 }
-
-const { scheme } = expo;
 
 /**
  * Initialization of Moralis
@@ -37,7 +35,6 @@ Moralis.enable = enableViaWalletConnect;
 console.log(AsyncStorage.getAllKeys(), "KEYS");
 
 const walletConnectOptions: WalletConnectProviderProps = {
-  redirectUrl: Platform.OS === "web" ? window.location.origin : `${scheme}://`,
   storageOptions: {
     // @ts-ignore
     asyncStorage: AsyncStorage,
@@ -53,15 +50,15 @@ const walletConnectOptions: WalletConnectProviderProps = {
     ],
   },
   // Uncomment to show a QR-code to connect a wallet
-  // renderQrcodeModal: Qrcode,
+  //renderQrcodeModal: Qrcode,
 };
 
 export const Providers = ({ children }: ProvidersProps) => {
   return (
     <WalletConnectProvider {...walletConnectOptions}>
       <MoralisProvider
-        appId={'amU8jrBvD05yN4e6gYCKr7whRMBCBbB3nH4i2ttg'}
-        serverUrl={'https://z3cqa8jcisqk.usemoralis.com:2053/server'}
+        appId={''}
+        serverUrl={''}
         environment={environment}>
         <MoralisDappProvider>
           <ApplicationProvider {...eva} theme={eva.light}>

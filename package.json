@@ -16,7 +16,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postinstall": "node_modules/.bin/rn-nodeify --install crypto,http,https,os,assert,url,stream,events --yarn"
   },
   "dependencies": {
     "@eva-design/eva": "^2.1.1",
@@ -28,28 +29,36 @@
     "@react-navigation/material-bottom-tabs": "^6.0.9",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/stack": "^6.0.11",
+    "@tradle/react-native-http": "^2.0.0",
     "@ui-kitten/components": "^5.1.1",
     "@walletconnect/react-native-dapp": "1.6.6",
-    "@walletconnect/web3-provider": "^1.6.6",
+    "@walletconnect/web3-provider": "^1.7.0",
     "base-64": "1.0.0",
     "buffer": "6.0.3",
+    "env": "^0.0.2",
+    "events": "^1.1.1",
+    "https-browserify": "~0.0.0",
     "lottie-ios": "3.2.3",
     "lottie-react-native": "^4.1.3",
     "moralis": "0.0.99",
     "node-libs-browser": "2.2.1",
+    "patch-package": "^6.4.7",
     "path-browserify": "0.0.0",
+    "postinstall-postinstall": "^2.1.0",
     "react": "^17.0.2",
     "react-blockies": "^1.4.1",
     "react-dom": "^17.0.2",
     "react-moralis": "0.2.7",
     "react-native": "~0.63.4",
-    "react-native-crypto": "2.2.0",
+    "react-native-crypto": "^2.2.0",
     "react-native-dotenv": "2.4.3",
     "react-native-emoji-selector": "^0.2.0",
     "react-native-gesture-handler": "~1.10.2",
     "react-native-get-random-values": "1.5.0",
     "react-native-localhost": "1.0.0",
+    "react-native-os": "^1.0.1",
     "react-native-paper": "^4.9.2",
+    "react-native-randombytes": "^3.6.1",
     "react-native-reanimated": "~2.2.0",
     "react-native-safe-area-context": "3.2.0",
     "react-native-screens": "~3.4.0",
@@ -58,7 +67,11 @@
     "react-native-unimodules": "0.14.10",
     "react-native-vector-icons": "^9.0.0",
     "react-native-web": "~0.13.12",
-    "web3": "^1.6.0"
+    "readable-stream": "^1.0.33",
+    "rn-nodeify": "^10.3.0",
+    "stream-browserify": "^1.0.0",
+    "url": "^0.10.3",
+    "web3": "^1.6.1"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
@@ -97,12 +110,6 @@
     "ts-node": "9.1.1",
     "typescript": "~4.0.0"
   },
-  "react-native": {
-    "stream": "react-native-stream",
-    "crypto": "react-native-crypto",
-    "path": "path-browserify",
-    "process": "node-libs-browser/mock/process"
-  },
   "jest": {
     "preset": "react-native",
     "testMatch": [
@@ -123,5 +130,29 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": "eslint --fix --ext '.ts,.tsx,.js,.jsx' -c .eslintrc.json"
+  },
+  "react-native": {
+    "crypto": "react-native-crypto",
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "stream": "stream-browserify",
+    "http": "@tradle/react-native-http",
+    "https": "https-browserify",
+    "os": "react-native-os"
+  },
+  "browser": {
+    "crypto": "react-native-crypto",
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "stream": "stream-browserify",
+    "http": "@tradle/react-native-http",
+    "https": "https-browserify",
+    "os": "react-native-os"
   }
 }

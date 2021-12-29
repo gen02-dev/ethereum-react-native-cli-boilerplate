@@ -1,3 +1,3 @@
-import App from './frontend/App'
+import Providers from './frontend/AppWithProviders'
 
-export default App();
+export default Providers;

@@ -91,17 +91,14 @@ const LoginScreen = ({ navigation }) => {
             alignContent: "center",
           }}>
           <Image
-            style={{ flex: 1 }}
-            source={{
-              uri:
-                "https://ethereum.org/static/ddb9a22d53fdaaae70c0a0d94577f2aa/31987/eth.png",
-            }}
+            style={{ flex: 1, maxWidth: '100%', alignSelf: 'center' }}
+            source={require("../eth.png")}
           />
           <View style={{ flex: 1 }}>
             <KeyboardAvoidingView enabled>
               <View style={{ alignItems: "center" }}>
                 <LottieView source={Animation} loop autoPlay />
-                {/* <Image
+                <Image
                   source={require("../moralis-logo.png")}
                   style={{
                     width: "50%",
@@ -109,7 +106,7 @@ const LoginScreen = ({ navigation }) => {
                     resizeMode: "contain",
                     margin: 30,
                   }}
-                /> */}
+                />
               </View>
 
               <View>
