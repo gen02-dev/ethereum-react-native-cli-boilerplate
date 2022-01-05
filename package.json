@@ -15,11 +15,13 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
+    "test": "jest --config ./jest.config.js",
     "lint": "eslint .",
     "postinstall": "node_modules/.bin/rn-nodeify --install crypto,http,https,os,assert,url,stream,events --yarn"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
     "@eva-design/eva": "^2.1.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
@@ -49,7 +51,7 @@
     "react-blockies": "^1.4.1",
     "react-dom": "^17.0.2",
     "react-moralis": "0.2.7",
-    "react-native": "~0.63.4",
+    "react-native": "~0.66.0",
     "react-native-crypto": "^2.2.0",
     "react-native-dotenv": "2.4.3",
     "react-native-emoji-selector": "^0.2.0",
@@ -107,14 +109,17 @@
     "platform-detect": "3.0.1",
     "prettier": "2.2.1",
     "react-test-renderer": "17.0.1",
-    "ts-node": "9.1.1",
+    "ts-node": "^10.4.0",
     "typescript": "~4.0.0"
   },
   "jest": {
     "preset": "react-native",
     "testMatch": [
       "**/__tests__/frontend/**/*.[jt]s?(x)"
-    ]
+    ],
+    "transform": {
+      "\\.js$": "<rootDir>/node_modules/babel-jest"
+    }
   },
   "config": {
     "commitizen": {
