@@ -16,7 +16,7 @@ cd ..
 IMPORTANT: 
 - To run the app and be able to actually login do the following:
     - Make sure to have Xcode installed on your machine if you wish to run it in iOS development and Android Studio if you want it in Android.
-    - Connect a physical phone device. Open termilan/cmd and run ```adb adb devices``` and see if your device id is listed.
+    - Connect a physical phone device. Open termilan/cmd and run ```adb devices``` and see if your android device id is listed.
     - Install your preferred wallet on your device: (Metamask, Trust Wallet etc..)
 
 - IOS: 
