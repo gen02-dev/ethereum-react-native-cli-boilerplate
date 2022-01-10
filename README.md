@@ -23,3 +23,6 @@ IMPORTANT:
     - Command ```react-native run-ios``` or ```npx react-native run-ios``` for M1 users
 - Android:
     - Command ```react-native run-android``` or ```npx react-native run-android``` for M1 users
+
+What's New:
+- React Native Debugger. Debugging your dapp in a browser is straightforward with React Native Debugger. Simply open the simulator on iOS and press ```cmd + d```; for the Android emulator, ```press cmd + m``` and pick Debug from the React Native Debug menu. If you're using a physical device, simply shake it until the debugger menu appears.
