@@ -1,3 +1,3 @@
-import Providers from './frontend/AppWithProviders'
+import Providers from './frontend/AppWithProviders';
 
 export default Providers;
